@@ -31,7 +31,7 @@ svgson.parse(String(text)).then((json) => {
     }
 
     console.log("color: rgba(" + color + ")")
-    document.write('<p style="font-size:20px; font-weight: 900; color: rgb(' + color + ')">' + hash + '</p>');
+    document.write('<p style="font-size:20px; color: rgb(' + color + ')">' + hash + '</p>');
 });
 
 document.write('<img width=420 height=420 src="data:image/svg+xml;base64,' + data + '">');
