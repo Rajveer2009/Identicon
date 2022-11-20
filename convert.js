@@ -12,8 +12,16 @@
  */
 
 function Genrate() {
-    // Random "hash"
-    hash = String(Math.floor(Math.random() * 10000000000000000));
+    // Checking if the image is there an if there removing it  
+    element1 = document.getElementById("img");
+
+    if (typeof (element1) != 'undefined' && element1 != null) {
+        const element1 = document.getElementById("img");
+        element1.remove();
+    }
+
+    // Getting "hash" value
+    var hash = document.getElementById("seeed").value;
 
     // Options for the Identicon
     var options = {
@@ -44,29 +52,18 @@ function Genrate() {
             color = myArr[10] + myArr[11] + myArr[12] + myArr[13] + myArr[14] + myArr[15] + myArr[16] + myArr[17] + myArr[18] + myArr[19] + myArr[20] + myArr[21]
         }
 
+        // Deleting the image element
+        const element2 = document.getElementById("del");
+        element2.remove();
+
         // Logging the values of the "Seeed" and Color in the Console 
         console.log("seeed: " + hash);
         console.log("color: rgba[" + color + "]");
-
-        // Setting the Color value and "Hash" value to a paragraph tag
-        document.write('<a href="javascript:location.reload()" style="text-decoration: none; font-size:16px; color: rgb(' + color + ')">' + hash + '</a>');
     });
 
     // Writing the Identicon to an image
-    document.write('<img width=300px height=300px onclick="copy()" src="data:image/svg+xml;base64,' + data + '">');
-    document.write('<br>');
-}
-
-function copy() {
-    // Defining the variable for the text field
-    var copyText = hash;
-
-    // Copy the text inside the text field
-    navigator.clipboard.writeText(copyText).then(
-        function() {
-            window.location = "convert.html" 
-        }
-    ) 
-}
-
-Genrate()
+    img = document.createElement('img');
+    img.id = "img"
+    img.src = String("data:image/svg+xml;base64," + data);
+    document.body.appendChild(img);
+};

@@ -6,6 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <style>
+        input[type=text] {
+            width: 450px;
+            background-color: #f0f0f0;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 3px solid #ccc;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+        }
+
+        input[type=text]:focus {
+            border: 3px solid #555;
+        }
+    </style>
+
     <script src="identicon.js"></script>
     <script src="base64.js"></script>
     <script src="utf8.js"></script>
@@ -19,14 +37,17 @@
 <body style="background-color: rgba(240, 240, 240, 255); text-align: center;">
     <br>
     <div id="top-div">
-        <h1 class="banner text-center"><img id="favicon" width="30px" src="favicon.ico"> Random identicon</h1>
+        <h1 class="banner text-center"><img id="favicon" width="30px" src="favicon.ico"> Seeed to identicon</h1>
         <a style="color: black; text-decoration: none;" href="https://en.wikipedia.org/wiki/Identicon">
             An Identicon is a visual representation of a hash value.
         </a>
-    <hr width=550cm style="height: 5px; color: black;">
+        <hr width="300px" style="height: 5px; color: black;">
     </div>
     <div id="data-div">
-    <script src="main.js"></script>
+        <input type="text" placeholder="Enter Seeed:" id="seeed" onchange="Genrate()">
+        <br>
+        <script src="convert.js"></script>
+        <img src="identicons.png" id="del">
     </div>
 </body>
 
