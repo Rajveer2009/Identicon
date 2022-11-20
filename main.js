@@ -53,7 +53,7 @@ function Genrate() {
     });
 
     // Writing the Identicon to an image
-    document.write('<img width=300px height=300px onclick="copy()" src="data:image/svg+xml;base64,' + data + '">');
+    document.write('<img width=420px height=420px onclick="copy()" src="data:image/svg+xml;base64,' + data + '">');
     document.write('<br>');
 }
 
